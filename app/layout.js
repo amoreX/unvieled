@@ -12,6 +12,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <link rel="preconnect" precedence="default" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" precedence="default" href="https://fonts.gstatic.com" crossorigin />
+      <link precedence="default" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap" rel="stylesheet"></link>
       <body>
         {children}
         </body>
