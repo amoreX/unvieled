@@ -1,6 +1,8 @@
 "use client";
+
 import { useState } from "react";
 import { motion } from "framer-motion";
+import {signIn} from "next-auth/react";
 export default function Home() {
   let header = "Unvieled!";
   header = header.split("");
@@ -9,6 +11,9 @@ export default function Home() {
   const [isHover, setHover] = useState(false);
   const handleclick = () => {
     setHover(true);
+    setTimeout(() => {
+      signIn("google", { callbackUrl: "/Pages/" });
+  }, 1000);
   };
   return (
     <div
@@ -50,7 +55,7 @@ export default function Home() {
         initial={{ scale: 0.1, opacity: 0 }}
         transition={{ type: "tween", delay: 1.2 }}
         animate={{ scale: 1, opacity: 1 }}
-        className="text-black px-7 py-1 rounded-3xl my-5 relative w-56 h-8 flex flex-col items-center overflow-hidden"
+        className="text-black px-7 py-1 rounded-3xl my-5 relative w-56 h-8 flex flex-col items-center overflow-hidden cursor-pointer"
         onClick={() => {
           handleclick();
         }}
