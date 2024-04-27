@@ -2,8 +2,45 @@
 @tailwind components;
 @tailwind utilities;
 
-html,body{
-	margin:0px;
-	background-color: black;
-	overflow:hidden;
+html,
+body {
+  margin: 0px;
+  background-color: black;
+  overflow: hidden;
 }
+
+@keyframes sexanimation {
+	0% {
+		color: #cce6f4; /* Start color */
+	  }
+	  20% {
+		color: #81c1e3; /* Intermediate color */
+	  }
+	  40% {
+		color: #ed78b7; /* Intermediate color */
+	  }
+	  60%{
+		/* color: #9c65e3; End color */
+		background: linear-gradient(90deg, #81c1e3 0%, #ed78b7 65%,#9c65e3 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	  }
+	  80%{
+		/* color: #9c65e3; End color */
+		background: linear-gradient(90deg, #81c1e3 0%, #ed78b7 65%,#9c65e3 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	  }
+	  100% {
+		/* color: #9c65e3;  */
+		background: linear-gradient(90deg, #81c1e3 0%, #ed78b7 65%, #9c65e3 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	  }
+  }
+  
+  #header {
+	animation: sexanimation 1s ease-in-out forwards;
+	animation-delay: 1.5s;
+	color:#cce6f4;
+  }

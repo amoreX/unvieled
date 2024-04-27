@@ -18,13 +18,12 @@ export default function Home() {
   return (
     <div
       id="main-container"
-      style={{ fontFamily: "Unbounded" }}
+      style={{ fontFamily: "Unbounded", }}
       className="text-white cursor-default w-screen h-screen flex flex-col justify-center items-center"
     >
-      <div
+      <motion.div
         id="header"
         className="flex flex-row text-4xl"
-        style={{ color: "#CCE6F4" }}
       >
         {header.map((letter, index) => {
           return (
@@ -38,7 +37,7 @@ export default function Home() {
             </motion.div>
           );
         })}
-      </div>
+      </motion.div>
 
       <motion.div
         id="about"
