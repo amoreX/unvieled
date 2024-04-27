@@ -6,9 +6,9 @@ export default function Home() {
   header = header.split("");
   let click = "Unveil yourself";
   const [clicktext, setClicktext] = useState(click);
+  const [isHover, setHover] = useState(false);
   const handleclick = () => {
-    click = "Loading...";
-    setClicktext(click);
+    setHover(true);
   };
   return (
     <div
@@ -43,24 +43,31 @@ export default function Home() {
       >
         Get Social
       </motion.div>
+
       <motion.div
         id="signin-btn"
-        style={{ background: "#CCE6F4" }}
+        style={{ background: "#CCE6F4" ,border: "1px solid #CCE6F4 "}}
+        initial={{ scale: 0.1, opacity: 0 }}
+        transition={{ type: "tween", delay: 1.2 }}
+        animate={{ scale: 1, opacity: 1 }}
+        className="text-black px-7 py-1 rounded-3xl my-5 relative w-56 h-8 flex flex-col items-center overflow-hidden"
         onClick={() => {
           handleclick();
         }}
-        initial={{ scale:0.1, opacity: 0 }}
-        transition={{ type: "tween", delay: 1.2 }}
-        animate={{ scale:1, opacity: 1 }}
-        className="text-black px-7 py-1 rounded-3xl my-5"
       >
         <motion.span
-          initial={{  opacity: 0 }}
-          transition={{ type: "tween", delay:1.6}}
-          animate={{  opacity: 1 }}
+          initial={{ opacity: 0 }}
+          transition={{ type: "tween", delay: 1.6 }}
+          animate={{ opacity: 1 }}
         >
           {clicktext}
         </motion.span>
+        {isHover == true ? (
+          <motion.div initial={{ y:200}}
+          transition={{type:"tween",ease:"easeInOut",duration:0.58}}
+          animate={{y:-4}}
+          className="w-full h-full text-white absolute bg-black flex justify-center  items-center">Have fun Unvieling!</motion.div>
+        ) : null}
       </motion.div>
     </div>
   );
