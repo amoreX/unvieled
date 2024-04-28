@@ -2,8 +2,7 @@
 import "@fortawesome/fontawesome-svg-core/styles.css"; // import Font Awesome CSS
 import { config } from "@fortawesome/fontawesome-svg-core";
 config.autoAddCss = false; // Tell Font Awesome to skip adding the CSS automatically since it's being imported above
-
-
+import Navbar from "./Navbar/Navbar"
 
 export default function RootLayout({ children }) {
   return (
@@ -25,6 +24,7 @@ export default function RootLayout({ children }) {
         rel="stylesheet"
       ></link>
       <body>
+        <Navbar />
         {children}
       </body>
     </html>

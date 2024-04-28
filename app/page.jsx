@@ -49,7 +49,7 @@ export default function Home() {
       </motion.div>
 	  <div
         id="header-2"
-		style={{color:"#cce6f4"}}
+		style={{color:"#81C1E3"}}
 		initial={{opacity:1}}
 		transition={{type:"tween",ease:"easeInOut",delay:0.5}}
 		animate={{opacity:0}}
