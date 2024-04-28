@@ -12,7 +12,9 @@ html, body {
     position:sticky;
     margin-inline:auto;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    padding:10px;
+    box-sizing: border-box;
     align-items: center;
     top:95%;
     width:90%;
