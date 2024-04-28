@@ -7,6 +7,7 @@ export default function Home() {
   let header = "Unvieled!";
   header = header.split("");
   let click = "Unveil yourself";
+  const[time,setTime]=useState(true);
   const [clicktext, setClicktext] = useState(click);
   const [isHover, setHover] = useState(false);
   const handleclick = () => {
@@ -15,15 +16,23 @@ export default function Home() {
       signIn("google", { callbackUrl: "/Pages/" });
   }, 1000);
   };
+  setTimeout(()=>{
+	setTime(false);
+  },2000);
   return (
     <div
       id="main-container"
       style={{ fontFamily: "Unbounded", }}
       className="text-white cursor-default w-screen h-screen flex flex-col justify-center items-center"
     >
-      <motion.div
-        id="header"
-        className="flex flex-row text-4xl"
+      <div id="header-container" className="relative">
+	  <motion.div
+        id="header-1"
+		style={{background:"linear-gradient(90deg, #81c1e3 0%, #ed78b7 65%, #9c65e3 100%)",WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent"}}
+		initial={{opacity:0}}
+		transition={{type:"tween",ease:"easeInOut",delay:2}}
+		animate={{opacity:1}}
+        className="flex flex-row text-4xl absolute"
       >
         {header.map((letter, index) => {
           return (
@@ -38,6 +47,29 @@ export default function Home() {
           );
         })}
       </motion.div>
+	  <div
+        id="header-2"
+		style={{color:"#cce6f4"}}
+		initial={{opacity:1}}
+		transition={{type:"tween",ease:"easeInOut",delay:0.5}}
+		animate={{opacity:0}}
+        className="flex flex-row text-4xl "
+      >
+        {header.map((letter, index) => {
+          return (
+            <motion.div
+              key={index}
+              initial={{ scale: 0.1, opacity: 0 }}
+              transition={{ type: "tween", delay: index * 0.1 }}
+              animate={{ scale: 1, opacity: time==true?1:0 }}
+            >
+              {letter}
+            </motion.div>
+          );
+        })}
+      </div>
+
+	  </div>
 
       <motion.div
         id="about"
