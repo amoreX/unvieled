@@ -19,6 +19,7 @@ export default function Navbar() {
 			>
 				{navelements.map((tab, index) => (
 					<div
+						key={index}
 						onClick={() => {
 							handleclick(index);
 						}}
