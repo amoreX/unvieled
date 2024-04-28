@@ -24,8 +24,8 @@ export default function RootLayout({ children }) {
         rel="stylesheet"
       ></link>
       <body>
-        <Navbar />
         {children}
+        <Navbar />
       </body>
     </html>
   );
