@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import {signIn} from "next-auth/react";
+import { connectdb } from "./Backend/controllers/connectdb";
 export default function Home() {
   let header = "Unvieled!";
   header = header.split("");
